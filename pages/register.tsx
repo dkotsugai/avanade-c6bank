@@ -1,24 +1,27 @@
-import React from "react";
-import styled from "@emotion/styled";
-// quando você cria uma aplicação com create-react-app
-// ele tem um exemplo de imagem, é um SVG. import logo from './logo.svg';
+import React from 'react';
+import {
+    Container,
+    CssBaseline,
+} from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Copyright from '../components/utils/Copyright';
+import Register from '../components/Form/Register/Register';
 
 
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  background-image: url('/home.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
 
-export default function Register() {
-  return (
-  
-    <Container>
-      register    
-    </Container>
+//@mui/material
 
-  )
+const theme = createTheme();
+
+export default function RegisterPage(){
+
+    return (
+      <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+            <Register/>
+          <Copyright site="avanade" />
+        </Container>
+      </ThemeProvider>
+    );
 }
